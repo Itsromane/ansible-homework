@@ -1,0 +1,8 @@
+---
+
+- name: creating /etc/iaac file
+  file:
+    path: "/etc/iaac"
+    state: touch
+    mode: 0500
+

@@ -1,0 +1,20 @@
+---
+- hosts: iaas
+  become: true
+  roles:
+    - creating_file
+- hosts: all
+  #vars:
+  #  sample: variable
+  roles:
+    - distro_version
+  tasks:
+  - name: registered variables
+    debug:
+      msg:
+       - "vars {{ hostvars[inventory_hostname] }}"
+         
+         #- "ansible distribution {{ hostvars[inventory_hostname].ansible_distribution }}"
+         #- "major version {{ hostvars[inventory_hostname].ansible_distribution_major_version }}"
+         #- "version {{ hostvars[inventory_hostname].ansible_distribution_version }}"
+         #- "vars {{ hostvars[inventory_hostname] }}"
